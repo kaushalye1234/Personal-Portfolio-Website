@@ -23,3 +23,31 @@ header{gap:25px;flex-wrap:wrap}.name{flex-shrink:0}nav{flex-wrap:wrap;gap:20px}n
 .application-preview{margin:28px 0}.application-preview a{display:block;border:1px solid var(--line);border-radius:8px;overflow:hidden}.application-preview img{display:block;width:100%;height:auto}.application-preview figcaption{font-size:12px;line-height:1.7;color:var(--muted);margin-top:10px}
 
 .pos-feature{background:#f4ecf7;border-top-color:#8b4a86;margin-bottom:30px}.dark-theme .pos-feature{background:#35283b}.pos-feature>h3{font-size:39px}.pos-feature .ownership{border-color:var(--violet)}.pos-capabilities{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:28px 0}.pos-capabilities h4{font-size:16px;margin-bottom:8px}.pos-capabilities p{font-size:14px;color:var(--muted);margin:0}.project-grid:has(>.campus:only-child){grid-template-columns:1fr}.pos-feature .case-content{max-width:none}.pos-feature .architecture{max-width:700px}.pos-feature .case-content>p{max-width:700px}@media(max-width:760px){.pos-capabilities{grid-template-columns:1fr;gap:18px}.pos-feature>h3{font-size:31px}}
+
+/* Short opening sequence; content is usable without animation support. */
+@keyframes notebook-enter{from{opacity:.25;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes notebook-title{from{opacity:.3;transform:translateY(30px);clip-path:inset(0 0 18% 0)}to{opacity:1;transform:translateY(0);clip-path:inset(0)}}
+@keyframes notebook-draw{from{stroke-dashoffset:180}to{stroke-dashoffset:0}}
+@media(prefers-reduced-motion:no-preference){
+ header{animation:notebook-enter .55s ease-out both}
+ .intro>.handwritten{animation:notebook-enter .6s .08s ease-out both}
+ .intro>h1{animation:notebook-title .85s .12s cubic-bezier(.22,1,.36,1) both}
+ .intro>.lede{animation:notebook-enter .7s .24s ease-out both}
+ .intro>.intro-links{animation:notebook-enter .7s .34s ease-out both}
+ .margin-note{animation:notebook-enter .75s .4s ease-out backwards}
+ .margin-note path{stroke-dasharray:180;animation:notebook-draw 1s .65s ease-out backwards}
+ .application-preview img{transition:transform .45s cubic-bezier(.22,1,.36,1)}
+ .intro-links>a:first-child{transition:transform .2s ease,box-shadow .2s ease}
+ .other-work>a,.practice-list>a{transition:transform .2s ease}
+ summary>span{transition:transform .2s ease}
+ @supports(animation-timeline:view()){
+  .section-title,.flagship>.project-top,.flagship>h3,.flagship>.project-summary,.application-preview,.project-card,.practice-list>a,.about>h2,.contact>h2{animation:notebook-enter linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+  .application-preview:focus-within,.project-card:focus-within{animation:none}
+ }
+}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .application-preview a:hover img{transform:scale(1.025)}
+ .intro-links>a:first-child:hover{transform:translateY(-3px);box-shadow:0 7px 18px #22675e26}
+ .other-work>a:hover,.practice-list>a:hover{transform:translateX(5px)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
