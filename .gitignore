@@ -6,3 +6,6 @@
 Thumbs.db
 .DS_Store
 
+# Local browser review artifacts
+.playwright-cli/
+review-*.png
