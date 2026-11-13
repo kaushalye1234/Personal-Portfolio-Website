@@ -275,3 +275,12 @@ a{color:inherit;text-decoration:none}
 }
 .resume-portfolio{font-size:12px!important;overflow-wrap:anywhere;margin-top:12px;color:var(--muted)}
 @media print{.resume-portfolio{font-size:8.5pt!important;margin-top:7pt;margin-bottom:0;color:#425370}.resume section{margin-top:11pt}.resume p,.resume li{font-size:9.1pt;line-height:1.4}}
+/* Framed portrait CV header; body text stays in a single reading column. */
+.resume-header{display:grid;grid-template-columns:minmax(0,1fr) 112px;gap:24px;align-items:center;border-top:4px solid #263e67;padding-top:20px}
+.resume-heading{min-width:0}
+.resume-header h1{font-size:35px}
+.resume-photo{margin:0;padding:4px;border:1px solid #263e67;border-radius:7px;background:white;box-shadow:5px 5px 0 #dce5f1}
+.resume-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:3px}
+@media(max-width:600px){.resume-header{grid-template-columns:minmax(0,1fr) 80px;gap:14px;align-items:start}.resume-header h1{font-size:27px}.resume-header .resume-title{font-size:13px}.resume-links{font-size:12px;gap:8px 14px}}
+@media(max-width:390px){.resume-header{grid-template-columns:1fr}.resume-photo{width:85px;grid-row:1}.resume-header h1{font-size:27px}}
+@media print{.resume-header{grid-template-columns:minmax(0,1fr) 27mm;gap:7mm;align-items:start;border-top:2pt solid #263e67;padding-top:9pt}.resume-header h1{font-size:24pt}.resume-header .resume-title{font-size:10pt}.resume-header .resume-links{font-size:9pt;gap:10pt}.resume-photo{grid-row:auto;width:auto;box-shadow:2pt 2pt 0 #dce5f1;padding:2pt;border-radius:4pt;border:.7pt solid #263e67}.resume-photo img{border-radius:2pt}.resume section{margin-top:10pt}}
