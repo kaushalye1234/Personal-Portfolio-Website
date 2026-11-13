@@ -273,3 +273,5 @@ a{color:inherit;text-decoration:none}
 @media print{:root,html,body{color-scheme:light!important}
 @page{background:white}
 }
+.resume-portfolio{font-size:12px!important;overflow-wrap:anywhere;margin-top:12px;color:var(--muted)}
+@media print{.resume-portfolio{font-size:8.5pt!important;margin-top:7pt;margin-bottom:0;color:#425370}.resume section{margin-top:11pt}.resume p,.resume li{font-size:9.1pt;line-height:1.4}}
